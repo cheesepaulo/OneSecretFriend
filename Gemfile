@@ -22,9 +22,23 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 
+# My Gems
+gem 'devise'
+gem 'materialize-sass'
+gem 'material_icons'
+gem 'redis'
+gem 'sidekiq'
+
+group :test do
+  gem "factory_girl_rails"
+  gem "ffaker"
+end
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
