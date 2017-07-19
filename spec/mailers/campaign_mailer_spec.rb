@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.describe CampaingMailer, type: :mailer do
+RSpec.describe CampaignMailer, type: :mailer do
   describe "raffle" do
-    let(:mail) { CampaingMailer.raffle }
+    let(:mail) { CampaignMailer.raffle }
 
     it "renders the headers" do
       expect(mail.subject).to eq("Raffle")

@@ -1,3 +1,3 @@
 class Member < ApplicationRecord
-  belongs_to :campaing
+  belongs_to :campaign
 end

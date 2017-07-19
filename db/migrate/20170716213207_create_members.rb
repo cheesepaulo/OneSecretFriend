@@ -3,7 +3,7 @@ class CreateMembers < ActiveRecord::Migration[5.1]
     create_table :members do |t|
       t.string :name
       t.string :email
-      t.references :campaing, foreign_key: true
+      t.references :campaign, foreign_key: true
       t.boolean :open
       t.string :token
 

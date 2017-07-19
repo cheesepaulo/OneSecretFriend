@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170716214833) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "campaings", force: :cascade do |t|
+  create_table "campaigns", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.bigint "user_id"
@@ -25,18 +25,18 @@ ActiveRecord::Schema.define(version: 20170716214833) do
     t.datetime "event_date"
     t.string "event_hour"
     t.string "location"
-    t.index ["user_id"], name: "index_campaings_on_user_id"
+    t.index ["user_id"], name: "index_campaigns_on_user_id"
   end
 
   create_table "members", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.bigint "campaing_id"
+    t.bigint "campaign_id"
     t.boolean "open"
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["campaing_id"], name: "index_members_on_campaing_id"
+    t.index ["campaign_id"], name: "index_members_on_campaign_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,6 +57,6 @@ ActiveRecord::Schema.define(version: 20170716214833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "campaings", "users"
-  add_foreign_key "members", "campaings"
+  add_foreign_key "campaigns", "users"
+  add_foreign_key "members", "campaigns"
 end

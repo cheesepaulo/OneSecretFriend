@@ -1,9 +1,9 @@
-class CampaingMailer < ApplicationMailer
+class CampaignMailer < ApplicationMailer
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
-  #   en.campaing_mailer.raffle.subject
+  #   en.campaign_mailer.raffle.subject
   #
   def raffle
     @greeting = "Hi"
