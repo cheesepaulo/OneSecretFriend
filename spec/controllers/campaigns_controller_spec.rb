@@ -119,7 +119,7 @@ RSpec.describe CampaignsController, type: :controller do
     context "User isn't the Campaign Owner" do
       it "returns http forbidden" do
         campaign = create(:campaign)
-        delete :update, params: {id: campaign.id, campaign: @new_campaign_attributes}
+        put :update, params: {id: campaign.id, campaign: @new_campaign_attributes}
         expect(response).to have_http_status(:forbidden)
       end
     end
