@@ -31,5 +31,4 @@ RSpec.describe CampaignMailer, type: :mailer do
       expect(@mail.body.encoded).to match("/members/#{@member.token}/opened")
     end
   end
-
 end
