@@ -9,16 +9,16 @@ RSpec.describe MembersController, type: :controller do
     end
   end
 
-  describe "GET #update" do
+  describe "GET #destroy" do
     it "returns http success" do
-      get :update
+      get :destroy
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #destroy" do
+  describe "GET #update" do
     it "returns http success" do
-      get :destroy
+      get :update
       expect(response).to have_http_status(:success)
     end
   end
