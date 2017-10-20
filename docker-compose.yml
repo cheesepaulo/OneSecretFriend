@@ -2,7 +2,7 @@ version: '2'
 
 services:
   postgres:
-    image: 'postgres:9.5'
+    image: 'postgres:9.6-alpine'
     volumes:
       - 'postgres:/var/lib/postgresql/data'
 
@@ -20,7 +20,7 @@ services:
       - 'redis'
       - 'app'
     build: .
-    command: bash start_jobs
+    command: bash start_jobs.sh
     volumes:
       - '.:/one_secret_friend'
     volumes_from:
@@ -31,7 +31,7 @@ services:
       - 'postgres'
       - 'redis'
     build: .
-    command: bash start
+    command: bash start.sh
     ports:
       - '3000:3000'
     volumes:
@@ -45,10 +45,10 @@ services:
       - /box
 
   mailcatcher:
-    image: yappabe/mailcatcher
+    image: tophfr/mailcatcher
     ports:
-      - 1025:1025
-      - 1080:1080
+      - 1025:25
+      - 1080:80
 
 
 volumes:
